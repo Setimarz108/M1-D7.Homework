@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation</title>
+</head>
+
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+
+    .changeColor{
+        color:#F4A15D;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .newSize{
+
+        width: 60%;
+        
+    }
+    </style>
+
+   
+<body>
+    
+    <header>
+        <h1 style="width: 100%;" onclick="toggleTitle()" id="title">Custom Smartphones </h1>
+    </header>
+
+    <button class="change-background" onclick="changeBackground()"> change Background</button> <br>
+
+    <button  onclick="changeSize()"> make me bigger!</button>
+    <main>
+       <div>
+        <table>
+            <tr>
+                <th>Product name</th>
+                <th>Description</th>
+                <th>price</th>
+            </tr>
+
+            <tr>
+                <td>Samsumg 
+                    <img src="images/samsung.webp" style="width: 30%;" alt="" srcset="">
+                </td>
+                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, corrupti. <br>
+                    <a class="link" href="https://www.amazon.de/Samsung-Galaxy-128GB-schwarz-Android/dp/B08Q8GJXPF/
+                    ref=sr_1_5_mod_primary_new?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=cellphones&qid=1635863843&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=8-5"> Buy me</a> </td>
+                <td>100€</td>
+            </tr>
+             
+            <tr>
+                <td>Cubot 
+                    <img  src="images/Cubot_J9.webp" style="width: 30%;" alt="" srcset="">
+                </td>
+                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, corrupti. <br>
+                    <a class="link" href="https://www.amazon.de/CUBOT-J9-Smartphone-13MP-Quad-Kamera-erweiterbar-Gr%C3%BCn/
+                    dp/B08L57YT6V/ref=sr_1_10?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=cellphones&qid=1635863874&sr=8-10&th=1"> Buy me</a> </td>
+                <td>100€</td>
+            </tr>
+
+            <tr>
+                <td>ANDROID 11 
+                    <img src="images/Android 11.jpg" style="width: 30%;" alt="" srcset="">
+                </td>
+                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, corrupti. <br>
+                    <a class="link" href="https://www.amazon.de/Blackview-5380mAh-Akku-Dual-SIM-Handy-Gesichtsentsperrung-Fingerabdruck-Blau/dp/B08TQJYFFS/
+                    ref=sr_1_21?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=cellphones&qid=1635863716&sr=8-21&th=1"> Buy me</a> </td>
+                <td>100€</td>
+            </tr>
+
+            <tr>
+                <td>REdmi 11
+                    <img src="images/Xiaomi 10.jpg" style="width: 30%;" alt="" srcset="">
+                </td>
+                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, corrupti. <br>
+                    <a class="link" href="https://www.amazon.de/Xiaomi-Smartphone-Speicher-Quad-R%C3%BCckkamera-Frontkamera
+                    /dp/B08XJV415R/ref=sr_1_20?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=cellphones&qid=1635863874&sr=8-20"> Buy me</a> </td>
+                <td>100€</td>
+            </tr>
+
+            <tr>
+                <td>Doogee X05
+                    <img src="images/Doogee X05.webp" style="width: 30%;" alt="" srcset="">
+                </td>
+                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, corrupti. <br>
+                    <a class="link" href="https://www.amazon.de/DOOGEE-Offiziell-Smartphone-Vertrag-Einsteiger-BLAU
+                    /dp/B08SW5TYHK/ref=sr_1_17?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=cellphones&qid=1635863874&sr=8-17&th=1"> Buy me</a> </td>
+                <td>100€</td>
+            </tr>
+
+        </table>
+
+        <button onclick="addClassToLinks()"> change links color</button>
+      </div>
+    </main>
+
+    <section>
+
+        <div class="message-board">
+           
+            <h3> Leave a comment</h3>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <button type="submit"> send Message</button>
+            
+        </div>
+    </section>
+
+    <footer style="width: 100%; border: 1px solid blue;">
+        <div>
+           <span> <h2  >www.smart-phones-buy.io</h2></span> 
+           <span><h3 id="footer-address">Romeo street 108, Wonderland, AL</h3></span>
+           <button onclick="changeFooterAddress()"> change me</button>
+     </div>
+
+
+    </footer>
+</body>
+
+<script>
+        
+        //change H1//
+
+        const toggleTitle = function(){
+
+            let title = document.getElementById('title')
+            title.innerHTML = 'Hot Deals today!!'
+            return
+        }
+        
+        // change BackgrounD//
+
+        const changeBackground = function(){
+             
+            
+            document.body.style.backgroundColor = '#D8EEE1';
+            
+        }
+
+        //change footer address//
+
+        const changeFooterAddress = function(){
+
+            let footer = document.getElementById('footer-address');
+            footer.innerText = 'Merlin Road 17, MagicCity WDL' 
+        }
+
+        // Add class to links// //not working//
+
+        const addClassToLinks = function(){
+
+            let links = document.getElementsByClassName('links');
+
+            links.classList.add("changeColor")
+        }
+
+
+        //class for images//
+
+        const changeSize = function(){
+
+            let imgs = document.getElementsByTagName('img')
+             imgs.classList.add('newSize');
+        }
+    </script>
+
+
+</html>
