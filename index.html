@@ -12,16 +12,22 @@
       border:1px solid black;
     }
 
-    .changeColor{
+    .main a{
         color:#F4A15D;
         font-size: 30px;
         font-weight: bold;
     }
 
-    .newSize{
+    .image{
 
-        width: 60%;
+        visibility: hidden;
+        border: 2px solid blueviolet;
         
+    }
+
+    .price {
+         
+        color: crimson;
     }
     </style>
 
@@ -35,28 +41,28 @@
     <button class="change-background" onclick="changeBackground()"> change Background</button> <br>
 
     <button  onclick="changeSize()"> make me bigger!</button>
-    <main>
+    <main id="main">
        <div>
-        <table>
+        <table id="table">
             <tr>
                 <th>Product name</th>
                 <th>Description</th>
-                <th>price</th>
+                <th class="price">Price</th>
             </tr>
-
+ class="price"
             <tr>
                 <td>Samsumg 
-                    <img src="images/samsung.webp" style="width: 30%;" alt="" srcset="">
+                    <img src="images/samsung.webp" style="width: 30%;" alt="" srcset="" class="image">
                 </td>
                 <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, corrupti. <br>
                     <a class="link" href="https://www.amazon.de/Samsung-Galaxy-128GB-schwarz-Android/dp/B08Q8GJXPF/
                     ref=sr_1_5_mod_primary_new?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=cellphones&qid=1635863843&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=8-5"> Buy me</a> </td>
-                <td>100€</td>
+                <td class="price">100€</td>
             </tr>
              
             <tr>
                 <td>Cubot 
-                    <img  src="images/Cubot_J9.webp" style="width: 30%;" alt="" srcset="">
+                    <img  src="images/Cubot_J9.webp" style="width: 30%;" alt="" srcset=""class="image">
                 </td>
                 <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, corrupti. <br>
                     <a class="link" href="https://www.amazon.de/CUBOT-J9-Smartphone-13MP-Quad-Kamera-erweiterbar-Gr%C3%BCn/
@@ -66,32 +72,32 @@
 
             <tr>
                 <td>ANDROID 11 
-                    <img src="images/Android 11.jpg" style="width: 30%;" alt="" srcset="">
+                    <img src="images/Android 11.jpg" style="width: 30%;" alt="" srcset=""class="image">
                 </td>
                 <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, corrupti. <br>
                     <a class="link" href="https://www.amazon.de/Blackview-5380mAh-Akku-Dual-SIM-Handy-Gesichtsentsperrung-Fingerabdruck-Blau/dp/B08TQJYFFS/
                     ref=sr_1_21?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=cellphones&qid=1635863716&sr=8-21&th=1"> Buy me</a> </td>
-                <td>100€</td>
+                <td class="price">100€</td>
             </tr>
 
             <tr>
                 <td>REdmi 11
-                    <img src="images/Xiaomi 10.jpg" style="width: 30%;" alt="" srcset="">
+                    <img src="images/Xiaomi 10.jpg" style="width: 30%;" alt="" srcset=""class="image">
                 </td>
                 <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, corrupti. <br>
                     <a class="link" href="https://www.amazon.de/Xiaomi-Smartphone-Speicher-Quad-R%C3%BCckkamera-Frontkamera
                     /dp/B08XJV415R/ref=sr_1_20?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=cellphones&qid=1635863874&sr=8-20"> Buy me</a> </td>
-                <td>100€</td>
+                <td class="price">100€</td>
             </tr>
 
             <tr>
                 <td>Doogee X05
-                    <img src="images/Doogee X05.webp" style="width: 30%;" alt="" srcset="">
+                    <img src="images/Doogee X05.webp" style="width: 30%;" alt="" srcset="" class="image">
                 </td>
                 <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, corrupti. <br>
                     <a class="link" href="https://www.amazon.de/DOOGEE-Offiziell-Smartphone-Vertrag-Einsteiger-BLAU
                     /dp/B08SW5TYHK/ref=sr_1_17?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=cellphones&qid=1635863874&sr=8-17&th=1"> Buy me</a> </td>
-                <td>100€</td>
+                <td class="price"> class="price"100€</td>
             </tr>
 
         </table>
@@ -154,19 +160,36 @@
 
         const addClassToLinks = function(){
 
-            let links = document.getElementsByClassName('links');
+            let links = document.getElementById('main');
 
-            links.classList.add("changeColor")
+            links.classList.toggle("main")
         }
 
 
         //class for images//
 
         const changeSize = function(){
+            
+            for( let image of document.querySelectorAll('img')){
+               
+                image.classList.toggle('image')
+            }
+         
 
-            let imgs = document.getElementsByTagName('img')
-             imgs.classList.add('newSize');
+             
+           
         }
+
+
+        //toogle color for Price//
+      
+        const switchColor = function (){
+
+            let prices = document.getElementsByClassName('price')
+                 
+               price.classList.toggle('price')
+        }
+
     </script>
 
 
